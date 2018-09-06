@@ -17,15 +17,13 @@ def get_all_collections():
     out = []
 
     # Load from database
-    with ocdskingfisher.database.get_engine().begin() as connection:
-        s = ocdskingfisher.database.sa.sql.select([ocdskingfisher.database.collection_table])
-        for result in connection.execute(s):
-            out.append(Collection(
-                database_id=result['id'],
-                source_id=result['source_id'],
-                data_version=result['data_version'],
-                sample=result['sample'],
-            ))
+    for result in ocdskingfisher.database.get_all_collections():
+        out.append(Collection(
+            database_id=result['id'],
+            source_id=result['source_id'],
+            data_version=result['data_version'],
+            sample=result['sample'],
+        ))
 
     # Load from disk
     this_dir = os.path.dirname(os.path.realpath(__file__))
