@@ -440,3 +440,12 @@ def get_all_collections():
                     "sample": result['sample'],
                 })
     return out
+
+
+def get_collection_by_id(database_id):
+    with ocdskingfisher.database.get_engine().begin() as connection:
+        s = ocdskingfisher.database.sa.sql\
+            .select([ocdskingfisher.database.collection_table])\
+            .where(collection_table.c.id == database_id)
+        result = connection.execute(s)
+        return result.fetchone()
