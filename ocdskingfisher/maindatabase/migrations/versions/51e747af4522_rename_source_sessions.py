@@ -25,4 +25,9 @@ def upgrade():
 
 
 def downgrade():
-    pass
+    op.alter_column('record', 'collection_file_status_id', new_column_name='source_session_file_status_id')
+    op.alter_column('release', 'collection_file_status_id', new_column_name='source_session_file_status_id')
+    op.alter_column('collection_file_status', 'collection_id', new_column_name='source_session_id')
+
+    op.rename_table('collection_file_status', 'source_session_file_status')
+    op.rename_table('collection', 'source_session')
