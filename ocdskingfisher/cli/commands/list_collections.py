@@ -1,5 +1,3 @@
-import os
-
 from ocdskingfisher.collection_util import get_all_collections
 import ocdskingfisher.cli.commands.base
 import ocdskingfisher.sources_util
@@ -22,4 +20,3 @@ class ListCollections(ocdskingfisher.cli.commands.base.CLICommand):
                     collection.data_version,
                     ("Sample" if collection.sample else "Full")
                 ))
-

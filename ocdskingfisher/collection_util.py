@@ -18,7 +18,7 @@ def get_all_collections():
 
     # Load from database
     with ocdskingfisher.database.get_engine().begin() as connection:
-        s = ocdskingfisher.database.sa.sql.select([ ocdskingfisher.database.collection_table])
+        s = ocdskingfisher.database.sa.sql.select([ocdskingfisher.database.collection_table])
         for result in connection.execute(s):
             out.append(Collection(
                 database_id=result['id'],

@@ -6,7 +6,6 @@ Create Date: 2018-09-06 10:26:26.589013
 
 """
 from alembic import op
-import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
@@ -23,6 +22,7 @@ def upgrade():
     op.alter_column('collection_file_status', 'source_session_id', new_column_name='collection_id')
     op.alter_column('release', 'source_session_file_status_id', new_column_name='collection_file_status_id')
     op.alter_column('record', 'source_session_file_status_id', new_column_name='collection_file_status_id')
+
 
 def downgrade():
     pass
