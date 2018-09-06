@@ -13,6 +13,7 @@ You can pass the `verbose` flag to all sub commands, to get more output printed 
 .. toctree::
 
    cli-run.rst
+   cli-list-collections.rst
    cli-status.rst
    cli-upgrade-database.rst
    cli-check-different-schema-version.rst
