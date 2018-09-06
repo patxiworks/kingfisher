@@ -3,8 +3,8 @@
 class CLICommand:
     command = ''
 
-    def __init__(self):
-        pass
+    def __init__(self, app=None):
+        self.app = app
 
     def configure_subparser(self, subparser):
         pass

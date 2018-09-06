@@ -10,7 +10,7 @@ class ListCollections(ocdskingfisher.cli.commands.base.CLICommand):
         pass
 
     def run_command(self, args):
-        collections = get_all_collections()
+        collections = get_all_collections(self.app)
 
         for collection in collections:
             print("{:5} {:4} {:40} {:20} {:5}".format(

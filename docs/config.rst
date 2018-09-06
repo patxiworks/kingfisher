@@ -1,11 +1,36 @@
 Configuration
 =============
 
+Data Directory Configuration
+----------------------------
+
+By default, it will create a data directory called "data" in the same directory as the code.
+
+This can be changed with a a `~/.config/ocdskingfisher/config.ini` file. A sample one is included in the
+main directory.
+
+
+.. code-block:: ini
+
+    [DATA]
+    DIR=/var/ocdskingfisher/data
+
+
 Main database Configuration
 ---------------------------
 
 Postgresql Database settings can be set using a `~/.config/ocdskingfisher/config.ini` file. A sample one is included in the
 main directory.
+
+
+.. code-block:: ini
+
+    [DBHOST]
+    HOSTNAME = localhost
+    PORT = 5432
+    USERNAME = ocdsdata
+    PASSWORD = FIXME
+    DBNAME = ocdsdata
 
 It will also attempt to load the password from a '~/.pgpass' file, if one is present.
 
