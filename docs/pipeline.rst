@@ -30,11 +30,11 @@ If it is stopped half way through it can be restarted.
 Note as well as downloading the URL, specific sources may do more at this stage.
 Sometimes, we can download one URL and then extract other URL's we need to download from that data.
 
-These new URL's are then added to the list of current URL's.
-(One side affect of this is that the count of files downloaded and to download may be inaccurate.
-For instance, a process may say "downloaded 15 of 20 URL's".
-But then, when downloading and processing URL number 16, it may find another 10 URL's to download.
-The process would then say "downloaded 16 of 30 URL's".)
+These new URLs are then added to the list of current URLs.
+(One side effect of this is that the count of files downloaded and to download may be inaccurate.
+For instance, a process may say "downloaded 15 of 20 URLs".
+But then, when downloading and processing URL number 16, it may find another 10 URLs to download.
+The process would then say "downloaded 16 of 30 URLs".)
 
 An example of a source that does not do this is uk_contracts_finder - this just downloads the URL and saves it to disk.
 
